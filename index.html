@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pet Training Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI Pet Training Assistant</h1>
+        <p>Get personalized training guidance for your beloved pet</p>
+        <div id="login-section" class="login-section">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="login-status"></p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="main-panel">
+            <div class="chat-container">
+                <div class="chat-history" id="chatHistory">
+                    <div class="message assistant-message">
+                        Hello! I'm your AI Pet Training Assistant. How can I help with your pet training today?
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Ask about training techniques, behavior issues, or upload a photo...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+            
+            <div class="camera-upload">
+                <h2>Upload Photo or Video</h2>
+                <p>Share a photo or video of your pet for personalized training advice</p>
+                <div class="camera-container">
+                    <button onclick="openCamera()">Open Camera</button>
+                    <input type="file" id="fileUpload" class="file-upload" accept="image/*,video/*">
+                    <div id="preview"></div>
+                </div>
+            </div>
+            
+            <div class="training-progress">
+                <h2>Training Progress</h2>
+                <div class="form-group">
+                    <label>Current Training Focus:</label>
+                    <select id="trainingFocus">
+                        <option value="Basic Obedience">Basic Obedience</option>
+                        <option value="Potty Training">Potty Training</option>
+                        <option value="Leash Training">Leash Training</option>
+                        <option value="Socialization">Socialization</option>
+                        <option value="Trick Training">Trick Training</option>
+                    </select>
+                    <button onclick="updateProgress()">Update Progress</button>
+                </div>
+                
+                <p>Overall Progress: <span id="progressPercent">25%</span></p>
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                
+                <p>Skills Mastered:</p>
+                <ul class="skills-list" id="skillsList">
+                    <li><input type="checkbox" id="skill-sit"> Sit</li>
+                    <li><input type="checkbox" id="skill-stay"> Stay</li>
+                    <li><input type="checkbox" id="skill-come"> Come</li>
+                    <li><input type="checkbox" id="skill-down"> Down</li>
+                    <li><input type="checkbox" id="skill-leaveit"> Leave it</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="side-panel">
+            <div class="pet-profile">
+                <h2>Pet Profile</h2>
+                <div class="form-group">
+                    <label>Pet Name:</label>
+                    <input type="text" id="petName" placeholder="Enter pet's name">
+                </div>
+                <div class="form-group">
+                    <label>Species:</label>
+                    <select id="petSpecies">
+                        <option value="Dog">Dog</option>
+                        <option value="Cat">Cat</option>
+                        <option value="Bird">Bird</option>
+                        <option value="Rabbit">Rabbit</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Breed:</label>
+                    <input type="text" id="petBreed" placeholder="Enter breed">
+                </div>
+                <div class="form-group">
+                    <label>Age:</label>
+                    <input type="text" id="petAge" placeholder="Enter age">
+                </div>
+                <div class="form-group">
+                    <label>Behavior Notes:</label>
+                    <textarea id="behaviorNotes" rows="4" placeholder="Enter any behavior notes or concerns"></textarea>
+                </div>
+                <button onclick="updateProfile()">Save Profile</button>
+            </div>
+            
+            <div class="recommendations">
+                <h2>Personalized Recommendations</h2>
+                <div id="recommendationsList">
+                    <div class="recommendation-card">
+                        <h3>Daily Training Routine</h3>
+                        <p>3 short sessions (5-10 minutes) focusing on one command at a time</p>
+                    </div>
+                </div>
+                <button onclick="fetchRecommendations()">Refresh Recommendations</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

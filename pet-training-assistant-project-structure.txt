@@ -1,0 +1,194 @@
+# Pet Training AI Assistant - Project Structure and Setup Guide
+
+## Project Structure
+
+```
+pet_training_assistant/
+├── README.md                       # Project documentation
+├── requirements.txt                # Python dependencies
+├── run.sh                          # Startup script
+├── app.py                          # Main FastAPI application
+├── model.py                        # ML model implementation
+├── utils.py                        # Utility functions
+├── data/                           # Data files
+│   ├── training_techniques.json    # Training techniques database
+│   ├── commands.json               # Commands database
+│   └── breed_characteristics.json  # Breed-specific information
+├── static/                         # Static frontend files
+│   ├── index.html                  # Main HTML file
+│   ├── css/                        # CSS stylesheets
+│   └── js/                         # JavaScript files
+├── tests/                          # Unit and integration tests
+└── models/                         # Pre-trained model files (created during setup)
+```
+
+## Setup Instructions
+
+### Prerequisites
+- Python 3.8 or higher
+- pip (Python package manager)
+- Virtual environment tool (recommended)
+
+### Step 1: Clone/Create the Project
+1. Create a new directory for the project:
+```bash
+mkdir pet_training_assistant
+cd pet_training_assistant
+```
+
+2. Create the folder structure as shown above:
+```bash
+mkdir -p data static/css static/js tests models
+```
+
+### Step 2: Set Up Virtual Environment
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+```
+
+### Step 3: Install Dependencies
+Create a requirements.txt file with the following content:
+
+```
+fastapi==0.103.1
+uvicorn==0.23.2
+numpy==1.24.3
+tensorflow==2.12.0
+pillow==10.0.0
+python-multipart==0.0.6
+transformers==4.31.0
+nltk==3.8.1
+```
+
+Then install the dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Create the Data Files
+Create JSON files in the data directory:
+
+1. data/training_techniques.json (Example structure - the full file would be populated during setup)
+```json
+{
+  "basic_obedience": {
+    "sit": {
+      "steps": [
+        "Hold a treat close to your pet's nose",
+        "Move your hand up, allowing their head to follow the treat and causing their bottom to lower",
+        "Once they're in a sitting position, say 'Sit'",
+        "Give them the treat and affection"
+      ],
+      "common_issues": [
+        "Pet jumps up instead of sitting",
+        "Pet walks backward instead of sitting"
+      ],
+      "solutions": [
+        "Try against a wall to prevent backing up",
+        "Use a lower treat position if jumping occurs"
+      ]
+    }
+  }
+}
+```
+
+2. data/commands.json
+```json
+[
+  "sit", "stay", "come", "down", "heel", "leave it", "drop it", "wait"
+]
+```
+
+3. data/breed_characteristics.json (Example structure)
+```json
+{
+  "Labrador Retriever": {
+    "trainability": "High",
+    "energy_level": "High",
+    "recommended_training": ["Retrieve", "Agility", "Obedience"],
+    "common_issues": ["Pulling on leash", "Jumping up", "Mouthing"]
+  }
+}
+```
+
+### Step 5: Add Frontend Files
+Copy the HTML file into the static directory.
+
+### Step 6: Create Run Script
+Create run.sh with the following content:
+
+```bash
+#!/bin/bash
+# Activate virtual environment
+source venv/bin/activate
+
+# Start the FastAPI server
+uvicorn app:app --reload --host 0.0.0.0 --port 8000
+```
+
+Make it executable:
+```bash
+chmod +x run.sh
+```
+
+## Running the Application
+
+### Start the Backend Server
+```bash
+./run.sh
+```
+
+### Access the Frontend
+Open a web browser and navigate to:
+```
+http://localhost:8000/static/index.html
+```
+
+For a production deployment, you would want to serve the frontend files through a proper web server like Nginx.
+
+## Development Notes
+
+### Backend API Endpoints
+
+The backend provides the following main endpoints:
+
+- `POST /profile` - Create or update pet profile
+- `POST /training/progress` - Update training progress
+- `POST /chat` - Process chat messages and get AI responses
+- `POST /analyze/image` - Analyze uploaded pet images
+- `POST /recommendations` - Get personalized training recommendations
+
+### Machine Learning Models
+
+The application uses several AI models:
+
+1. Text Processing Model - For understanding user queries
+2. Pet Breed Classification - For identifying pet breeds from images
+3. Behavior Analysis - For analyzing pet behavior from images/videos
+4. Recommendation Engine - For generating personalized training plans
+
+In this demo version, these are implemented as mock models. In a production version, these would be properly trained models.
+
+### Extending the Application
+
+To extend the functionality:
+
+1. Add new training techniques to data/training_techniques.json
+2. Enhance the model response logic in model.py
+3. Add new analysis features in utils.py
+4. Expand the frontend with additional UI components
+
+## Troubleshooting
+
+Common issues and solutions:
+
+- If the server fails to start, check if port 8000 is already in use
+- If dependencies fail to install, ensure you have the correct Python version
+- For TensorFlow issues on Apple Silicon (M1/M2), use the tensorflow-macos package instead

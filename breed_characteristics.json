@@ -1,0 +1,153 @@
+{
+    "basic_obedience": {
+        "sit": {
+            "steps": [
+                "Hold a treat close to your pet's nose",
+                "Move your hand up, allowing their head to follow the treat and causing their bottom to lower",
+                "Once they're in a sitting position, say 'Sit'",
+                "Give them the treat and affection"
+            ],
+            "common_issues": [
+                "Pet jumps up instead of sitting",
+                "Pet walks backward instead of sitting"
+            ],
+            "solutions": [
+                "Try against a wall to prevent backing up",
+                "Use a lower treat position if jumping occurs"
+            ],
+            "difficulty": "Beginner",
+            "estimated_time": "5-10 minutes daily for 1 week"
+        },
+        "stay": {
+            "steps": [
+                "Ask your pet to sit",
+                "Open the palm of your hand in front of you, and say 'Stay'",
+                "Take a few steps back",
+                "Return to your pet, give a treat, and affection",
+                "Gradually increase the distance and duration"
+            ],
+            "common_issues": [
+                "Pet follows immediately",
+                "Pet stays briefly then breaks position"
+            ],
+            "solutions": [
+                "Start with shorter durations",
+                "Practice in less distracting environments first"
+            ],
+            "difficulty": "Beginner",
+            "estimated_time": "10-15 minutes daily for 2 weeks"
+        },
+        "come": {
+            "steps": [
+                "Start in a quiet area with your pet on a leash",
+                "Say their name followed by 'Come' in a happy tone",
+                "Gently pull the leash toward you if needed",
+                "Reward with a treat and praise when they reach you"
+            ],
+            "common_issues": [
+                "Pet ignores the command",
+                "Pet gets distracted"
+            ],
+            "solutions": [
+                "Use higher-value treats",
+                "Practice in a distraction-free zone first"
+            ],
+            "difficulty": "Intermediate",
+            "estimated_time": "15-20 minutes daily for 2-3 weeks"
+        },
+        "down": {
+            "steps": [
+                "Hold a treat near your pet's nose",
+                "Move your hand down to the floor, encouraging them to follow",
+                "As they lie down, say 'Down'",
+                "Reward with a treat and praise"
+            ],
+            "common_issues": [
+                "Pet only lowers head, not body",
+                "Pet stands up quickly"
+            ],
+            "solutions": [
+                "Move treat closer to the ground",
+                "Reward only when fully down"
+            ],
+            "difficulty": "Intermediate",
+            "estimated_time": "10-15 minutes daily for 2 weeks"
+        }
+    },
+    "advanced_training": {
+        "heel": {
+            "steps": [
+                "Start with your pet on your left side",
+                "Hold a treat near your leg to keep their attention",
+                "Say 'Heel' and start walking",
+                "Reward when they stay by your side"
+            ],
+            "common_issues": [
+                "Pet pulls ahead",
+                "Pet lags behind"
+            ],
+            "solutions": [
+                "Stop walking when they pull",
+                "Use treats to encourage position"
+            ],
+            "difficulty": "Advanced",
+            "estimated_time": "15-20 minutes daily for 3-4 weeks"
+        },
+        "leave it": {
+            "steps": [
+                "Place a treat on the floor and cover it with your hand",
+                "Say 'Leave it' and wait for your pet to stop trying",
+                "Reward with a different treat from your other hand",
+                "Gradually uncover the treat and increase difficulty"
+            ],
+            "common_issues": [
+                "Pet persists in trying to get the treat",
+                "Pet loses interest"
+            ],
+            "solutions": [
+                "Use a higher-value reward treat",
+                "Keep sessions short and engaging"
+            ],
+            "difficulty": "Intermediate",
+            "estimated_time": "10-15 minutes daily for 2-3 weeks"
+        },
+        "roll over": {
+            "steps": [
+                "Start with your pet in a 'down' position",
+                "Hold a treat near their nose and move it toward their shoulder",
+                "As they roll to follow the treat, say 'Roll over'",
+                "Reward when they complete the roll"
+            ],
+            "common_issues": [
+                "Pet only turns head",
+                "Pet stands up instead"
+            ],
+            "solutions": [
+                "Guide treat more slowly",
+                "Keep them in 'down' with gentle pressure"
+            ],
+            "difficulty": "Advanced",
+            "estimated_time": "15-20 minutes daily for 3-4 weeks"
+        }
+    },
+    "house_training": {
+        "potty": {
+            "steps": [
+                "Take your pet outside first thing in the morning",
+                "Take them out after meals, naps, and playtime",
+                "Choose a specific spot and use a cue like 'Go potty'",
+                "Reward immediately after they eliminate outside"
+            ],
+            "common_issues": [
+                "Accidents indoors",
+                "Pet doesn’t signal need to go"
+            ],
+            "solutions": [
+                "Clean accidents thoroughly to remove scent",
+                "Watch for signs like circling or sniffing"
+            ],
+            "difficulty": "Beginner",
+            "estimated_time": "Consistent monitoring for 2-4 weeks"
+        }
+    }
+}
